@@ -1,0 +1,765 @@
+﻿<Page x:Class="Add_site_Project.views.AccountPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Add_site_Project.views"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1300"
+      Title="AccountPage">
+
+    <Grid Background="#201E1F">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0"
+                    Background="#F8C537"
+                    x:Name="YellowStackPanel">
+            <Button Content="«"
+                    Margin="40,10,0,0"
+                    HorizontalAlignment="Left"
+                    Width="40"
+                    x:Name="Back"
+                    Click="Back_Click"
+                    Background="#201E1F"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    FontSize="15"
+                    BorderThickness="0">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Label x:Name="Welcome"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"/>
+            <Image x:Name="ProfilePicture"
+                   Height="70"
+                   Width="70"/>
+            <StackPanel x:Name="InputsStackPanel">
+                <TextBox x:Name="LoginEntry"
+                     Background="#201E1F"
+                     Margin="40,30,40,0"
+                     Height="25"
+                     Foreground="White"
+                     HorizontalContentAlignment="Center"
+                     Padding="0,5,0,0"
+                     BorderThickness="0">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="NameEntry"
+                     Background="#201E1F"
+                     Margin="40,10,40,0"
+                     Height="25"
+                     Foreground="White"
+                     HorizontalContentAlignment="Center"
+                     Padding="0,5,0,0"
+                     BorderThickness="0">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="SurnameEntry"
+                     Background="#201E1F"
+                     Margin="40,10,40,0"
+                     Height="25"
+                     Foreground="White"
+                     HorizontalContentAlignment="Center"
+                     Padding="0,5,0,0"
+                     BorderThickness="0">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="EmailEntry"
+                     Background="#201E1F"
+                     Margin="40,10,40,0"
+                     Height="25"
+                     Foreground="White"
+                     HorizontalContentAlignment="Center"
+                     Padding="0,5,0,0"
+                     BorderThickness="0">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="NumberEntry"
+                     Background="#201E1F"
+                     Margin="40,10,40,0"
+                     Foreground="White"
+                     HorizontalContentAlignment="Center"
+                     Padding="0,5,0,0"
+                     Height="25"
+                     BorderThickness="0">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="AdressEntry"
+                     Background="#201E1F"
+                     Margin="40,10,40,0"
+                     Foreground="White"
+                     HorizontalContentAlignment="Center"
+                     Padding="0,5,0,0"
+                     Height="25"
+                     BorderThickness="0">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="ProfilePictureEntry"
+                     Background="#201E1F"
+                     Margin="40,10,40,0"
+                     Foreground="White"
+                     HorizontalContentAlignment="Center"
+                     Padding="0,5,0,0"
+                     Height="25"
+                     BorderThickness="0">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <DatePicker x:Name="DateEntry"
+                        Background="#201E1F"
+                        Margin="40,10,40,0"
+                        BorderThickness="0"/>
+                <Label Foreground="Red"
+                   HorizontalAlignment="Center"
+                   x:Name="ErrorAlert"/>
+                <Label Foreground="Green"
+                   HorizontalAlignment="Center"
+                   x:Name="Changes"/>
+                <Button x:Name="Edit"
+                    Content="Edytuj"
+                    Width="100"
+                    Height="40"
+                    Margin="0,20,0,0"
+                    Background="#201E1F"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    FontSize="20"
+                    Click="Edit_Click"
+                    BorderThickness="0">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+                <Button x:Name="AdminPanel"
+                    Content="AdminPanel"
+                    Width="150"
+                    Height="40"
+                    Margin="0,100,0,0"
+                    Background="#201E1F"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    FontSize="20"
+                    Click="AdminPanel_Click"
+                    BorderThickness="0"
+                    Visibility="Hidden">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+        </StackPanel>
+        <Grid Grid.Column="1"
+              Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0"
+                        Orientation="Horizontal">
+                <Border BorderBrush="#F8C537"
+                        BorderThickness="2"
+                        CornerRadius="15"
+                        Margin="10">
+                    <StackPanel x:Name="CurrentWorkplacePanel"
+                                Margin="5">
+                        <Label Content="Aktualne Stanowisko Pracy"
+                           Foreground="White"
+                           FontWeight="Bold"
+                           FontSize="15"/>
+                        <TextBox x:Name="CurrentWorkEntry"
+                             Background="#F8C537"
+                             HorizontalContentAlignment="Center"
+                                 Width="200">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="DescriptionEntry"
+                             Background="#F8C537"
+                             Margin="0,10,0,0"
+                             Width="200"
+                             Height="140"
+                             TextWrapping="Wrap">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <Label x:Name="CWerrorAlert"
+                           HorizontalAlignment="Center"
+                           Foreground="Red"/>
+                        <Button x:Name="Change"
+                            Content="Zmień"
+                            Height="30"
+                            Width="60"
+                            Background="#F8C537"
+                            FontWeight="Bold"
+                            Margin="0,10,0,0"
+                            BorderThickness="0"
+                            Click="Change_Click">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+                </Border>
+                <Border BorderBrush="#F8C537"
+                        CornerRadius="15"
+                        BorderThickness="2" 
+                        Margin="10">
+                    <StackPanel
+                        Margin="5">
+                        <Label Content="Podsumowanie zawodowe"
+                               FontWeight="Bold"
+                               FontSize="15"
+                               Foreground="White"/>
+                        <TextBox x:Name="WorkSummaryEntry"
+                             Background="#F8C537"
+                             TextWrapping="Wrap"
+                             Margin="0,10,0,0"
+                             Width="200"
+                             Height="170">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <Button x:Name="ChangeWorkSummary"
+                            Content="Zmień"
+                            Height="30"
+                            Width="60"
+                            Background="#F8C537"
+                            FontWeight="Bold"
+                            Margin="0,10,0,0"
+                            BorderThickness="0"
+                            Click="ChangeWorkSummary_Click">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+                </Border>
+                <Border BorderBrush="#F8C537"
+                        CornerRadius="15"
+                        BorderThickness="2" 
+                        Margin="10">
+                    <StackPanel Width="200">
+                        <Label Content="Znajomość języków"
+                               FontWeight="Bold"
+                               FontSize="15"
+                               HorizontalAlignment="Center"
+                               Foreground="White"/>
+                        <ListView Background="Transparent"
+                                  x:Name="LanguageList"
+                                  Foreground="White"
+                                  Height="190"
+                                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding Language}"
+                                        x:Name="LanguageCol"/>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding LevelOfKnowledge}"
+                                        x:Name="LevelOfKnowledgeCol"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                            <Button x:Name="AddLanguage"
+                                    Content="Dodaj"
+                                    Height="20"
+                                    Width="40"
+                                    Background="#F8C537"
+                                    FontWeight="Bold"
+                                    Margin="5"
+                                    BorderThickness="0"
+                            Click="AddLanguage_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="EditLanguage"
+                                    Content="Edytuj"
+                                    Height="20"
+                                    Width="40"
+                                    Background="#F8C537"
+                                    FontWeight="DemiBold"
+                                    Margin="5"
+                                    BorderThickness="0"
+                                    Click="EditLanguage_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="DeleteLanguage"
+                                    Content="Usuń"
+                                    Height="20"
+                                    Width="40"
+                                    Background="#F8C537"
+                                    FontWeight="DemiBold"
+                                    Margin="5"
+                                    BorderThickness="0"
+                                    Click="DeleteLanguage_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border BorderBrush="#F8C537"
+                        CornerRadius="15"
+                        BorderThickness="2" 
+                        Margin="10">
+                    <StackPanel Width="200">
+                        <Label Content="Umiejętności"
+                               FontWeight="Bold"
+                               FontSize="15"
+                               HorizontalAlignment="Center"
+                               Foreground="White"/>
+                        <ListView Background="Transparent"
+                                  x:Name="SkillsList"
+                                  Foreground="White"
+                                  Height="190"
+                                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding Skill}"
+                                        x:Name="SkillCol"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center">
+                            <Button x:Name="AddSkill"
+                                        Content="Dodaj"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="Bold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="AddSkill_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="EditSkill"
+                                        Content="Edytuj"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="DemiBold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="EditSkill_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="DeleteSkill"
+                                        Content="Usuń"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="DemiBold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="DeleteSkill_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal">
+                <Border BorderBrush="#F8C537"
+                        BorderThickness="2"
+                        CornerRadius="15"
+                        Margin="10">
+                    <StackPanel Margin="5"
+                                Width="435">
+                        <Label Content="Doświadczenie Zawodowe"
+                               Foreground="White"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Center"
+                               FontSize="15"/>
+                        <ListView Background="Transparent"
+                                  x:Name="ExperienceList"
+                                  Foreground="White"
+                                  Height="190"
+                                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding Position}"
+                                        x:Name="PositionCol"/>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding CompanyName}"
+                                        x:Name="CompanyNameCol"/>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding Localization}"
+                                        x:Name="LocalizationCol"/>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding EmplymentPeriod}"
+                                        x:Name="EmploymentPeriodCol"/>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding Duties}"
+                                        x:Name="DutiesCol"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center">
+                            <Button x:Name="AddExperience"
+                                        Content="Dodaj"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="Bold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="AddExperience_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="EditExperience"
+                                        Content="Edytuj"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="DemiBold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="EditExperience_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="DeleteExperience"
+                                        Content="Usuń"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="DemiBold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="DeleteExperience_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border BorderBrush="#F8C537"
+                        BorderThickness="2"
+                        CornerRadius="15"
+                        Margin="10">
+                    <StackPanel Margin="5"
+                                Width="435">
+                        <Label Content="Edukacja"
+                               Foreground="White"
+                                FontWeight="Bold"
+                               HorizontalAlignment="Center"
+                                FontSize="15"/>
+                        <ListView Background="Transparent"
+                                  x:Name="EducationList"
+                                  Foreground="White"
+                                  Height="190"
+                                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding SchoolName}"/>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding Localization}"/>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding DegreeLevel}"/>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding FieldOfStudy}"/>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding EducationPeriod}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center">
+                            <Button x:Name="AddEducation"
+                                        Content="Dodaj"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="Bold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="AddEducation_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="EditEducation"
+                                        Content="Edytuj"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="DemiBold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="EditEducation_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="DeleteEducation"
+                                        Content="Usuń"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="DemiBold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="DeleteEducation_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <StackPanel Grid.Row="2"
+                        Orientation="Horizontal">
+                <Border BorderBrush="#F8C537"
+                        BorderThickness="2"
+                        CornerRadius="15"
+                        Margin="10">
+                    <StackPanel Margin="5"
+                                Width="435">
+                        <Label Content="Kursy, Szkolenia, Certyfikaty"
+                               Foreground="White"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Center"
+                               FontSize="15"/>
+                        <ListView Background="Transparent"
+                                  x:Name="CoursesList"
+                                  Foreground="White"
+                                  Height="190"
+                                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding CourseName}"/>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding Organizer}"/>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding CoursePeriod}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                            <Button x:Name="AddCourse"
+                                        Content="Dodaj"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="Bold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="AddCourse_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="EditCourse"
+                                        Content="Edytuj"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="DemiBold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="EditCourse_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="DeleteCourse"
+                                        Content="Usuń"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="DemiBold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="DeleteCourse_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border BorderBrush="#F8C537"
+                        BorderThickness="2"
+                        CornerRadius="15"
+                        Margin="10">
+                    <StackPanel Margin="5"
+                                Width="435">
+                        <Label Content="Linki"
+                               Foreground="White"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Center"
+                               FontSize="15"/>
+                        <ListView Background="Transparent"
+                                  x:Name="LinksList"
+                                  Foreground="White"
+                                  Height="190"
+                                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn
+                                        DisplayMemberBinding="{Binding Link}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                            <Button x:Name="AddLink"
+                                        Content="Dodaj"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="Bold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="AddLink_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="EditLink"
+                                        Content="Edytuj"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="DemiBold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="EditLink_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="DeleteLink"
+                                        Content="Usuń"
+                                        Height="20"
+                                        Width="40"
+                                        Background="#F8C537"
+                                        FontWeight="DemiBold"
+                                        Margin="5"
+                                        BorderThickness="0"
+                                        Click="DeleteLink_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
